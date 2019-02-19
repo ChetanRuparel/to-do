@@ -22,6 +22,11 @@
 .App-link {
   color: #61dafb;
 }
+.BottomBarCSS{
+  bottom: 0px;
+  position: absolute;
+  width: 100vw;
+}
 
 @keyframes App-logo-spin {
   from {

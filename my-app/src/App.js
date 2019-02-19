@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from './logo.svg';
 import './App.css';
 import TodoList from './todoList'
 import TodoItems from './todoItems'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import BottomNavigationExampleSimple from './BottomBar'
+import RaisedButton from 'material-ui/RaisedButton';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+
 
 class App extends Component {
   inputElement = React.createRef()
@@ -43,10 +53,18 @@ class App extends Component {
       })
     }
   }
+
   render() {
     return (
       <div className="App">
-        <h1>To-do</h1>
+        <Toolbar>
+
+              <Typography variant="title" color="inherit">
+                My Tasks
+              </Typography>
+
+
+        </Toolbar>
         <TodoList
           addItem={this.addItem}
           inputElement={this.inputElement}
@@ -54,6 +72,13 @@ class App extends Component {
           currentItem={this.state.currentItem}
         />
         <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+
+        <MuiThemeProvider>
+          <div className="BottomBarCSS">
+            <BottomNavigationExampleSimple />
+          </div>
+        </MuiThemeProvider>
+
       </div>
     )
   }
