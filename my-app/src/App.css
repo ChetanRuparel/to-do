@@ -28,6 +28,20 @@
   width: 100vw;
 }
 
+.leftMenu{
+  left: 10%;
+  position: absolute;
+}
+
+.rightMenu{
+  right: 10%;
+}
+.bottonBarleftMenu{
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 10%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

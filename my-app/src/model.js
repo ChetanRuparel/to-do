@@ -97,7 +97,7 @@ class SimpleModal extends React.Component {
       <div>
 
 
-        <RaisedButton onClick={this.handleOpen} label="Add a new task" primary={true} style={style} />
+        <RaisedButton onClick={this.handleOpen} label="New Task" primary={true} style={style} />
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"

@@ -4,9 +4,14 @@ import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigati
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import IconMenuExampleControlled from './PopOver'
+import IconMenuExampleControlledMenu from './menu.js'
 import RaisedButton from 'material-ui/RaisedButton';
 import TodoItems from './todoItems'
 import SimpleModalWrapped from './model.js'
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+
+import Grid from '@material-ui/core/Grid';
 
 
 const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
@@ -38,9 +43,18 @@ class BottomNavigationExampleSimple extends Component {
     return (
       <Paper zDepth={1}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
-          <IconMenuExampleControlled />
-          <SimpleModalWrapped />
-          <IconMenuExampleControlled />
+        <Grid container spacing={4}>
+          <Grid item xs className="bottonBarleftMenu">
+            <IconMenuExampleControlledMenu />
+            </Grid>
+            <Grid item xs>
+              <SimpleModalWrapped />
+            </Grid>
+            <Grid item xs>
+              <IconMenuExampleControlled />
+            </Grid>
+          </Grid>
+
         </BottomNavigation>
       </Paper>
     );
